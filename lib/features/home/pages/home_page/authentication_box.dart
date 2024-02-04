@@ -69,7 +69,62 @@ class AuthenticationBox extends HookWidget {
                 ],
               ),
               const HorizontalGap(6),
-              OutlinedButton(onPressed: () {}, child: Text('로그인'))
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 78,
+                    color: const Color(0xFFAEDEFC),
+                    child: Text('Login', textAlign: TextAlign.center, style: Theme.of(context).textTheme.displaySmall),
+                  ),
+                ),
+              )
+            ],
+          ),
+          const VerticalGap(10),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {},
+              child: Text(
+                'TODODOC 회원가입',
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                      color: const Color(
+                        0xFF2073E9,
+                      ),
+                    ),
+              ),
+            ),
+          ),
+          const VerticalGap(10),
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: Text(
+                  '아이디 찾기',
+                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                        color: const Color(
+                          0xFF7C7C7C,
+                        ),
+                      ),
+                ),
+              ),
+              const Text(
+                ' / ',
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Text(
+                  '비밀번호 찾기',
+                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                        color: const Color(
+                          0xFF7C7C7C,
+                        ),
+                      ),
+                ),
+              ),
             ],
           ),
         ],

@@ -63,6 +63,8 @@ class HoverMenu extends HookWidget {
   Widget build(BuildContext context) {
     final isHovering = useState(false);
 
+    const animationDuration = Duration(milliseconds: 200);
+
     return Container(
       color: const Color(0xFFFFF6F6),
       child: MouseRegion(
@@ -102,9 +104,10 @@ class HoverMenu extends HookWidget {
             TableRow(children: [
               for (int row = 0; row < HoverMenuItems.values.length; row++)
                 TableCell(
-                  child: isHovering.value
-                      ? const VerticalGap(20)
-                      : const SizedBox(),
+                  child: AnimatedSize(
+                    duration: animationDuration,
+                    child: isHovering.value ? const VerticalGap(20) : const SizedBox(),
+                  ),
                 ),
             ]),
             for (int row = 0; row < HoverMenuItems.maxSubMenuItems(); row++)
@@ -119,9 +122,7 @@ class HoverMenu extends HookWidget {
                               },
                               child: Center(
                                 child: Text(
-                                  item.subMenuItems.length > row
-                                      ? item.subMenuItems[row]
-                                      : '',
+                                  item.subMenuItems.length > row ? item.subMenuItems[row] : '',
                                   style: Theme.of(context).textTheme.titleLarge,
                                 ),
                               ),
@@ -133,9 +134,10 @@ class HoverMenu extends HookWidget {
             TableRow(children: [
               for (int row = 0; row < HoverMenuItems.values.length; row++)
                 TableCell(
-                  child: isHovering.value
-                      ? const VerticalGap(20)
-                      : const SizedBox(),
+                  child: AnimatedSize(
+                    duration: animationDuration,
+                    child: isHovering.value ? const VerticalGap(20) : const SizedBox(),
+                  ),
                 ),
             ]),
             TableRow(children: [
@@ -143,9 +145,7 @@ class HoverMenu extends HookWidget {
                 TableCell(
                   child: Container(
                     color: const Color(0xFFFFB9CF),
-                    child: isHovering.value
-                        ? const SizedBox(height: 5)
-                        : const SizedBox(),
+                    child: isHovering.value ? const SizedBox(height: 5) : const SizedBox(),
                   ),
                 ),
             ]),
