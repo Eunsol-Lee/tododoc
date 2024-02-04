@@ -12,16 +12,25 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/day_shift.png
+  AssetGenImage get dayShift =>
+      const AssetGenImage('assets/images/day_shift.png');
+
   /// File path: assets/images/main_ad_banner.png
   AssetGenImage get mainAdBanner =>
       const AssetGenImage('assets/images/main_ad_banner.png');
+
+  /// File path: assets/images/today_issue.png
+  AssetGenImage get todayIssue =>
+      const AssetGenImage('assets/images/today_issue.png');
 
   /// File path: assets/images/tododoc_logo.png
   AssetGenImage get tododocLogo =>
       const AssetGenImage('assets/images/tododoc_logo.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [mainAdBanner, tododocLogo];
+  List<AssetGenImage> get values =>
+      [dayShift, mainAdBanner, todayIssue, tododocLogo];
 }
 
 class Assets {

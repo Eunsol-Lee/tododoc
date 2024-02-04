@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tododoc/features/home/pages/home_page/authentication_box.dart';
 import 'package:tododoc/features/index.dart';
 import 'package:tododoc/shared/index.dart';
+
+import 'cards/index.dart';
+import 'widgets/index.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,6 +19,19 @@ class HomePage extends StatelessWidget {
           const HoverMenu(),
           const VerticalGap(20),
           _mainAdBannerAndAuthenticationBox(),
+          const VerticalGap(20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                DayShiftCard(),
+                const HorizontalGap(10),
+                HotArticlesCard(),
+                const HorizontalGap(10),
+                TodayIssueCard(),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -30,6 +45,7 @@ class HomePage extends StatelessWidget {
           Assets.images.mainAdBanner.image(width: 925, height: 233),
           const HorizontalGap(10),
           const AuthenticationBox(),
+          const HorizontalGap(10),
         ],
       ),
     );
